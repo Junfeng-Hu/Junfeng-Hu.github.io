@@ -15,12 +15,10 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="LeetCode-100-&amp;#x76F8;&amp;#x540C;&amp;#x7684;&amp;#x6811;&amp;#xFF08;python&amp;#xFF09;&amp;#x89E3;&amp;#x51B3;&amp;#x6811;&amp;#x7ED3;&amp;#x6784;&amp;#x7684;&amp;#x9898;&amp;#xFF0C;&amp;#x7406;&amp;#x89E3;&amp;#x548C;&amp;#x8FD0;&amp;#x7528;&amp;#x9012;&amp;#x5F52;&amp;#x5F88;&amp;#x91">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1438289-be3e7d08f6a5e66b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-09-01T02:17:10.402Z">
+<meta property="og:updated_time" content="2019-09-17T09:26:07.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="LeetCode-100-&amp;#x76F8;&amp;#x540C;&amp;#x7684;&amp;#x6811;&amp;#xFF08;python&amp;#xFF09;&amp;#x89E3;&amp;#x51B3;&amp;#x6811;&amp;#x7ED3;&amp;#x6784;&amp;#x7684;&amp;#x9898;&amp;#xFF0C;&amp;#x7406;&amp;#x89E3;&amp;#x548C;&amp;#x8FD0;&amp;#x7528;&amp;#x9012;&amp;#x5F52;&amp;#x5F88;&amp;#x91">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1438289-be3e7d08f6a5e66b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,7 +154,6 @@
 <p>&#x603B;&#x7ED3;&#xFF1A;&#x89E3;&#x51B3;&#x6811;&#x76F8;&#x5173;&#x7684;&#x9898;&#x76EE;&#xFF0C;&#x9012;&#x5F52;&#x51FA;&#x53E3;&#xFF0C;&#x9012;&#x5F52;&#x6761;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x5BF9;&#x6811;&#x7ED3;&#x6784;&#x7684;&#x9012;&#x5F52;&#x5FC5;&#x987B;&#x8981;&#x5F88;&#x6E05;&#x695A;&#x3002;<br>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isSameTree(self, p: TreeNode, q: TreeNode) -&gt; bool:</span><br><span class="line">        if p is None and q is None:</span><br><span class="line">            return True</span><br><span class="line">        if(p and q) and (p.val == q.val):</span><br><span class="line">            resLeft = self.isSameTree(p.left, q.left)</span><br><span class="line">            resRight = self.isSameTree(p.right, q.right)</span><br><span class="line">            return resLeft and resRight</span><br><span class="line">        else:</span><br><span class="line">            return False</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/1438289-be3e7d08f6a5e66b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x76F8;&#x540C;&#x7684;&#x6811;"></p>
 
       
 
