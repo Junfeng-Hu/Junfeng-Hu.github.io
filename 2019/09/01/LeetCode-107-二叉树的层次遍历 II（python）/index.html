@@ -8,13 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="LeetCode-107-二叉树的层次遍历 II（python）目前只要涉及到层次遍历的题，我基本都用的相同的代码模板就可以解决。这一题我用了python里面的双端队列：collections.deque()，可以在保存每一层非None节点的时候反向插入列表，就可以实现题目要求的自底向上的层次遍历。心得：发现只要和层次遍历相关的代码都是在固定的代码模板里面修修改改就可以全部AC。一定是我太菜了才会">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/09/01/LeetCode-107-二叉树的层次遍历 II（python）/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="LeetCode-107-二叉树的层次遍历 II（python）目前只要涉及到层次遍历的题，我基本都用的相同的代码模板就可以解决。这一题我用了python里面的双端队列：collections.deque()，可以在保存每一层非None节点的时候反向插入列表，就可以实现题目要求的自底向上的层次遍历。心得：发现只要和层次遍历相关的代码都是在固定的代码模板里面修修改改就可以全部AC。一定是我太菜了才会">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1438289-412a1c92b825c7bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-09-01T02:02:49.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="LeetCode-107-二叉树的层次遍历 II（python）目前只要涉及到层次遍历的题，我基本都用的相同的代码模板就可以解决。这一题我用了python里面的双端队列：collections.deque()，可以在保存每一层非None节点的时候反向插入列表，就可以实现题目要求的自底向上的层次遍历。心得：发现只要和层次遍历相关的代码都是在固定的代码模板里面修修改改就可以全部AC。一定是我太菜了才会">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1438289-412a1c92b825c7bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,474 +156,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-LeetCode-429-N叉树的层序遍历" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/01/LeetCode-429-N叉树的层序遍历/">LeetCode-429-N叉树的层序遍历</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/01/LeetCode-429-N叉树的层序遍历/" class="archive-article-date">
-  	<time datetime="2019-09-01T14:07:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>给定一个 N 叉树，返回其节点值的<em>层序遍历</em>。 (即从左到右，逐层遍历)。</p>
-<p>例如，给定一个 <code>3叉树</code> :</p>
-<p> <img src="LeetCode-429-N%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/N%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86.png" alt="N叉树的层序遍历"></p>
-<p> 返回其层序遍历:</p>
-<p> [[1], [3,2,4], [5,6]]</p>
-<p><strong>说明:</strong></p>
-<ol>
-<li>树的深度不会超过 <code>1000</code>。</li>
-<li>树的节点总数不会超过 <code>5000</code>。</li>
-</ol>
-<p><strong>思路：</strong> 层序遍历解题，记住一些模板对所有层序遍历相关的题目都有帮助。</p>
-<p>代码模板主要是这样：layer用来保存每一层的的节点，next_queue用来保存下一层的节点，并且queue = next_queue用来完成层序遍历，for node in queue这一步很重要，用来遍历当前层的节点。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def function(root):</span><br><span class="line">        queue = [root]</span><br><span class="line">        while queue:</span><br><span class="line">            layer = []</span><br><span class="line">            next_queue = []</span><br><span class="line">            for node in queue:</span><br><span class="line">                layer.append(node.val)</span><br><span class="line">                next_queue = 做一些符合题目的操作</span><br><span class="line">              </span><br><span class="line">            queue = next_queue</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def levelOrder(self, root: &apos;Node&apos;) -&gt; List[List[int]]:</span><br><span class="line">        if not root:</span><br><span class="line">            return []</span><br><span class="line">        queue = [root]</span><br><span class="line">        queueLevel = []</span><br><span class="line">        while queue:</span><br><span class="line">            layer = []</span><br><span class="line">            next_queue = []</span><br><span class="line">            for node in queue:</span><br><span class="line">                layer.append(node.val)</span><br><span class="line">                for child in node.children:</span><br><span class="line">                    next_queue.append(child)</span><br><span class="line">              </span><br><span class="line">            queueLevel.append(layer)</span><br><span class="line">            queue = next_queue</span><br><span class="line">        return queueLevel</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-429-N叉树的层序遍历/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-404-左叶子之和" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/01/LeetCode-404-左叶子之和/">LeetCode-404-左叶子之和</a>
-    </h1>
-  
-
-        
-        <a href="/2019/09/01/LeetCode-404-左叶子之和/" class="archive-article-date">
-  	<time datetime="2019-09-01T13:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>计算给定二叉树的所有左叶子之和。</p>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line">    /  \</span><br><span class="line">   15   7</span><br><span class="line"></span><br><span class="line">在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24</span><br></pre></td></tr></table></figure>
-
-<p>思路：定义一个变量sum记录所有左叶子节点之和，定义一个辅助函数sumLeft，用来判断左叶子节点时进行 self.sum += root.left.val。然后左右子树递归。</p>
-<p>代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def sumOfLeftLeaves(self, root: TreeNode) -&gt; int:</span><br><span class="line">        self.sum = 0</span><br><span class="line">        def sumLeft(root):</span><br><span class="line">            if root is None:</span><br><span class="line">                return  </span><br><span class="line">            if root.left and root.left.left is None and root.left.right is None:</span><br><span class="line">                self.sum += root.left.val</span><br><span class="line">            sumLeft(root.left)</span><br><span class="line">            sumLeft(root.right)</span><br><span class="line">        sumLeft(root)</span><br><span class="line">        return self.sum</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-404-左叶子之和/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-111- 二叉树的最小深度(python)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="LeetCode-111-二叉树的最小深度-python"><a href="#LeetCode-111-二叉树的最小深度-python" class="headerlink" title="LeetCode-111- 二叉树的最小深度(python)"></a>LeetCode-111- 二叉树的最小深度(python)</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-d40e22a5449febf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="二叉树的最小深度
-"><br>题目：给定一个二叉树，找出其最小深度。<br>最小深度是从根节点到最近叶子节点的最短路径上的节点数量。<br>说明: 叶子节点是指没有子节点的节点。</p>
-<p>思路：与求二叉树的高度思路相似，不过要注意递归条件如下。</p>
-<ol>
-<li>当节点为空，return 0</li>
-<li>当节点左节点为空，return 节点右子树的最小深度。</li>
-<li>当节点右节点为空，return 节点左子树最小深度。</li>
-<li>当节点左右节点都不为空时，rerturn 左右子树最小深度。<br>说明：注意当节点有一个节点为空而另一个节点不为空，如2，3条时，不应该返回左右子树的最小深度，因为最小深度的定义是<strong>从根节点到最近叶子节点的最短路径上的节点数量</strong>，如果在2，3这两种情况返回左右子树的最小深度就会导致得到的是非叶子节点的最小深度不满足题意。<br>代码如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minDepth(self, root: TreeNode) -&gt; int:</span><br><span class="line">        if root is None or root.val is None:</span><br><span class="line">            return 0</span><br><span class="line">        if root.left is None and root.right is None:</span><br><span class="line">            return 1</span><br><span class="line">        if root.left is None:</span><br><span class="line">            return self.minDepth(root.right) + 1</span><br><span class="line">        if root.right is None:</span><br><span class="line">            return self.minDepth(root.left) + 1</span><br><span class="line">        return min(self.minDepth(root.left), self.minDepth(root.right)) + 1</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-111- 二叉树的最小深度(python)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-235-二叉搜索树的最近公共祖先" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="LeetCode-235-二叉搜索树的最近公共祖先"><a href="#LeetCode-235-二叉搜索树的最近公共祖先" class="headerlink" title="LeetCode-235-二叉搜索树的最近公共祖先"></a>LeetCode-235-二叉搜索树的最近公共祖先</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-42409f6f586d9c81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="二叉搜索树的最近公共祖先"><br>递归法: 因为是二叉搜索树，当p, q在root两侧时，return root, 否则到root左侧或者右侧递归。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def lowestCommonAncestor(self, root, p, q):</span><br><span class="line">        if p.val&lt;root.val and q.val&lt;root.val:</span><br><span class="line">            return self.lowestCommonAncestor(root.left,p,q)  </span><br><span class="line">        if p.val&gt;root.val and q.val&gt;root.val:</span><br><span class="line">            return self.lowestCommonAncestor(root.right,p,q)   </span><br><span class="line">        return root</span><br></pre></td></tr></table></figure>
-
-<p>迭代法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def lowestCommonAncestor(self, root, p, q):</span><br><span class="line">        while root:</span><br><span class="line">            if p.val &gt; root.val &lt; q.val:</span><br><span class="line">                root = root.right</span><br><span class="line">            elif p.val &lt; root.val &gt; q.val:</span><br><span class="line">                root = root.left</span><br><span class="line">            else:</span><br><span class="line">                return root</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-235-二叉搜索树的最近公共祖先/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-226-翻转二叉树(python)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="LeetCode-226-翻转二叉树-python"><a href="#LeetCode-226-翻转二叉树-python" class="headerlink" title="LeetCode-226-翻转二叉树(python)"></a>LeetCode-226-翻转二叉树(python)</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-76335a6e422507da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="翻转二叉树"><br>发现了二叉树这种递归法都是有套路的，只要你把道理写清楚了，递归的复杂过程就让计算机去做吧，你不要管那么多。。。</p>
-<ol>
-<li>每次需要考虑的特殊情况就是递归出口：这题就是当树为空时，return </li>
-<li>然后先考虑根节点的左右子树翻转：用一个中间节点先保存左子树，其实就是利用交换两个数的值的思路，不再赘述。</li>
-<li>递归左右子树</li>
-<li>return root<br>代码如下：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def invertTree(self, root: TreeNode) -&gt; TreeNode:</span><br><span class="line">        if root is None:</span><br><span class="line">            return</span><br><span class="line">        tempNode = root.left</span><br><span class="line">        root.left = root.right</span><br><span class="line">        root.right = tempNode</span><br><span class="line">        self.invertTree(root.left)</span><br><span class="line">        self.invertTree(root.right)</span><br><span class="line">        return root</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-226-翻转二叉树(python)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-112-路径总和(python)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="LeetCode-112-路径总和-python"><a href="#LeetCode-112-路径总和-python" class="headerlink" title="LeetCode-112-路径总和(python)"></a>LeetCode-112-路径总和(python)</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-ee5b0fd19c387b0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="路径总和"><br>题目：给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。<br>说明: 叶子节点是指没有子节点的节点。<br>思路：当是空树的时候直接返回False。每次遍历过一个节点的时候sum -= root.val。<br>           当遇到叶子节点的时候就判断此时sum是否等于0，return sum ==0。<br>            return 左右子树递归的<strong>或</strong>值。</p>
-<p>代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def hasPathSum(self, root: TreeNode, sum: int) -&gt; bool:</span><br><span class="line">        if root is None:</span><br><span class="line">            return False</span><br><span class="line">        </span><br><span class="line">        sum -= root.val</span><br><span class="line">        if root.left is None and root.right is None:</span><br><span class="line">            return sum == 0</span><br><span class="line">        </span><br><span class="line">        isLeft = self.hasPathSum(root.left, sum)</span><br><span class="line">        isRight = self.hasPathSum(root.right, sum)</span><br><span class="line">        return isLeft or isRight</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-112-路径总和(python)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-110-平衡二叉树(python)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="LeetCode-110-平衡二叉树-python"><a href="#LeetCode-110-平衡二叉树-python" class="headerlink" title="LeetCode-110-平衡二叉树(python)"></a>LeetCode-110-平衡二叉树(python)</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-6030ea11ada7fecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="平衡二叉树"><br>思路很清晰，就是获得每个节点的左右子树高度，然后返回 abs(左子树高度-右子树高度) &lt;= 1的值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return self.eachNodeBalanced(root) and self.isBalanced(root.left) and self.isBalanced(root.right)</span><br></pre></td></tr></table></figure>
-
-<p>这句代码就是返回每个节点是否满足平衡二叉树调节的布尔值的<strong>与</strong>值，只要有一个是False，那么最终的返回值都是False，只有当所有的节点都满足平衡条件时，最终结果才是True。</p>
-<hr>
-<p>完整代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isBalanced(self, root: TreeNode) -&gt; bool:</span><br><span class="line">        if root is None:</span><br><span class="line">            return True</span><br><span class="line">        return self.eachNodeBalanced(root) and self.isBalanced(root.left) and self.isBalanced(root.right)</span><br><span class="line"></span><br><span class="line">    def getHeight(self, root):</span><br><span class="line">        if root is None or root.val is None:</span><br><span class="line">            return 0</span><br><span class="line">        return max(self.getHeight(root.left), self.getHeight(root.right)) + 1</span><br><span class="line"></span><br><span class="line">    def eachNodeBalanced(self, root):</span><br><span class="line">        leftHeight = self.getHeight(root.left)</span><br><span class="line">        rightHeight = self.getHeight(root.right)</span><br><span class="line">        return abs(leftHeight - rightHeight) &lt;= 1</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-110-平衡二叉树(python)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-108-将有序数组转换为二叉搜索树(python)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="LeetCode-108-将有序数组转换为二叉搜索树-python"><a href="#LeetCode-108-将有序数组转换为二叉搜索树-python" class="headerlink" title="LeetCode-108-将有序数组转换为二叉搜索树(python)"></a>LeetCode-108-将有序数组转换为二叉搜索树(python)</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-b88e00369034dfdf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="将有序数组转换为二叉搜索树"></p>
-<ol>
-<li>二叉搜索树的性质：任一节点（假设有左右两个节点）的值大于其左孩子节点的值，小于其右孩子节点的值。</li>
-<li>二叉搜索树中序遍历得到的数组是一个升序数组。<br><strong>思路:</strong>由上面一二点分析可得：数组中间值所构成的节点其实就是根节点。根节点左边数组构成其左子树，根节点右边的数组构成其右子树。<strong>递归构建每个节点的左右子树。</strong><br>心得：递归真神奇。</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def sortedArrayToBST(self, nums: List[int]) -&gt; TreeNode:</span><br><span class="line">        if len(nums) == 0:</span><br><span class="line">            return </span><br><span class="line">        mid = len(nums) // 2</span><br><span class="line">        root = TreeNode(nums[mid])</span><br><span class="line">        root.left = self.sortedArrayToBST(nums[:mid])</span><br><span class="line">        root.right = self.sortedArrayToBST(nums[mid+1:])</span><br><span class="line">        </span><br><span class="line">        return root</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-108-将有序数组转换为二叉搜索树(python)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-107-二叉树的层次遍历 II（python）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-LeetCode-107-二叉树的层次遍历 II（python）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -627,6 +166,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -634,16 +194,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-107-二叉树的层次遍历 II（python）/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/01/LeetCode-107-二叉树的层次遍历 II（python）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/09/01/LeetCode-108-将有序数组转换为二叉搜索树(python)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/01/LeetCode-104- 二叉树的最大深度（迭代法）（python）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -663,60 +291,14 @@
 
 
 
-
-  
-    <article id="post-LeetCode-104- 二叉树的最大深度（迭代法）（python）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="LeetCode-104-二叉树的最大深度（迭代法）（python）"><a href="#LeetCode-104-二叉树的最大深度（迭代法）（python）" class="headerlink" title="LeetCode-104- 二叉树的最大深度（迭代法）（python）"></a>LeetCode-104- 二叉树的最大深度（迭代法）（python）</h1><p>本博客是用迭代法求二叉树最大深度。<br>思想：采用层序遍历，用一个变量初始值为-1（因为在我写的程序中，在最后一层的下一层即都是空节点的那一层也执行了一次），每遍历一层的时候就自增1。<br>心得：其实写代码之前觉得很困难，因为之前有稍微看一下别人的解析，什么用两个变量记录啥啥啥的。但是想了一下，其实就是层序遍历时，每遍历一层，高度加一，想到上次写的那个对称二叉树迭代法的代码其实很好用。突然发现，其实你掌握了一些基础的代码，其实可以用到解决很多题目上。但是如果你的基本功很差，没有这样的一些基础解题的代码框架，那就会很吃力。<br>附上代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxDepth2(self, root: TreeNode) -&gt; int:</span><br><span class="line">        if root is None:</span><br><span class="line">            return 0</span><br><span class="line">        queue = [root]</span><br><span class="line">        count = -1</span><br><span class="line">        while queue:</span><br><span class="line">            layer = list()</span><br><span class="line">            next_queue = list()</span><br><span class="line">            for node in queue:</span><br><span class="line">                if not node:</span><br><span class="line">                    layer.append(None)</span><br><span class="line">                    continue</span><br><span class="line"></span><br><span class="line">                next_queue.append(node.left)</span><br><span class="line">                next_queue.append(node.right)</span><br><span class="line">                layer.append(node.val)</span><br><span class="line"></span><br><span class="line">            queue = next_queue</span><br><span class="line">            count += 1</span><br><span class="line">        return count</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/09/01/LeetCode-104- 二叉树的最大深度（迭代法）（python）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -739,8 +321,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
