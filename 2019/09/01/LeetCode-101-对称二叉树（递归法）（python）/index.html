@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode-101-对称二叉树（递归法）（python）如题所示：对称二叉树要满足如下条件：  两棵子树根节点（rootA, rootB）的值相等 rootA的左子树和rootB的右子树要对称 rootA的右子树和rootB的左子树要对称  定义一个函数：isMirror(self, lChild, rChild)，来判断两棵子树是否镜像对称。  递归出口：当两个节点都为空时，返回True；">
+  <meta name="description" content="LeetCode-101-&amp;#x5BF9;&amp;#x79F0;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#xFF08;&amp;#x9012;&amp;#x5F52;&amp;#x6CD5;&amp;#xFF09;&amp;#xFF08;python&amp;#xFF09;&amp;#x5982;&amp;#x9898;&amp;#x6240;&amp;#x793A;&amp;#xFF1A;&amp;#x5BF9;&amp;#x79F0;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#x89">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2019/09/01/LeetCode-101-对称二叉树（递归法）（python）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="LeetCode-101-对称二叉树（递归法）（python）如题所示：对称二叉树要满足如下条件：  两棵子树根节点（rootA, rootB）的值相等 rootA的左子树和rootB的右子树要对称 rootA的右子树和rootB的左子树要对称  定义一个函数：isMirror(self, lChild, rChild)，来判断两棵子树是否镜像对称。  递归出口：当两个节点都为空时，返回True；">
+<meta property="og:description" content="LeetCode-101-&amp;#x5BF9;&amp;#x79F0;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#xFF08;&amp;#x9012;&amp;#x5F52;&amp;#x6CD5;&amp;#xFF09;&amp;#xFF08;python&amp;#xFF09;&amp;#x5982;&amp;#x9898;&amp;#x6240;&amp;#x793A;&amp;#xFF1A;&amp;#x5BF9;&amp;#x79F0;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#x89">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1438289-d5f078e1ff9e0ccc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2019-09-01T01:59:38.957Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="LeetCode-101-对称二叉树（递归法）（python）如题所示：对称二叉树要满足如下条件：  两棵子树根节点（rootA, rootB）的值相等 rootA的左子树和rootB的右子树要对称 rootA的右子树和rootB的左子树要对称  定义一个函数：isMirror(self, lChild, rChild)，来判断两棵子树是否镜像对称。  递归出口：当两个节点都为空时，返回True；">
+<meta name="twitter:description" content="LeetCode-101-&amp;#x5BF9;&amp;#x79F0;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#xFF08;&amp;#x9012;&amp;#x5F52;&amp;#x6CD5;&amp;#xFF09;&amp;#xFF08;python&amp;#xFF09;&amp;#x5982;&amp;#x9898;&amp;#x6240;&amp;#x793A;&amp;#xFF1A;&amp;#x5BF9;&amp;#x79F0;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#x89">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1438289-d5f078e1ff9e0ccc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -147,16 +147,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="LeetCode-101-对称二叉树（递归法）（python）"><a href="#LeetCode-101-对称二叉树（递归法）（python）" class="headerlink" title="LeetCode-101-对称二叉树（递归法）（python）"></a>LeetCode-101-对称二叉树（递归法）（python）</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-d5f078e1ff9e0ccc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="对称二叉树"><br>如题所示：对称二叉树要满足如下条件：</p>
+        <h1 id="LeetCode-101-&#x5BF9;&#x79F0;&#x4E8C;&#x53C9;&#x6811;&#xFF08;&#x9012;&#x5F52;&#x6CD5;&#xFF09;&#xFF08;python&#xFF09;"><a href="#LeetCode-101-&#x5BF9;&#x79F0;&#x4E8C;&#x53C9;&#x6811;&#xFF08;&#x9012;&#x5F52;&#x6CD5;&#xFF09;&#xFF08;python&#xFF09;" class="headerlink" title="LeetCode-101-&#x5BF9;&#x79F0;&#x4E8C;&#x53C9;&#x6811;&#xFF08;&#x9012;&#x5F52;&#x6CD5;&#xFF09;&#xFF08;python&#xFF09;"></a>LeetCode-101-&#x5BF9;&#x79F0;&#x4E8C;&#x53C9;&#x6811;&#xFF08;&#x9012;&#x5F52;&#x6CD5;&#xFF09;&#xFF08;python&#xFF09;</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-d5f078e1ff9e0ccc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x5BF9;&#x79F0;&#x4E8C;&#x53C9;&#x6811;"><br>&#x5982;&#x9898;&#x6240;&#x793A;&#xFF1A;&#x5BF9;&#x79F0;&#x4E8C;&#x53C9;&#x6811;&#x8981;&#x6EE1;&#x8DB3;&#x5982;&#x4E0B;&#x6761;&#x4EF6;&#xFF1A;</p>
 <ol>
-<li>两棵子树根节点（rootA, rootB）的值相等</li>
-<li>rootA的左子树和rootB的右子树要对称</li>
-<li>rootA的右子树和rootB的左子树要对称</li>
+<li>&#x4E24;&#x68F5;&#x5B50;&#x6811;&#x6839;&#x8282;&#x70B9;&#xFF08;rootA, rootB&#xFF09;&#x7684;&#x503C;&#x76F8;&#x7B49;</li>
+<li>rootA&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x548C;rootB&#x7684;&#x53F3;&#x5B50;&#x6811;&#x8981;&#x5BF9;&#x79F0;</li>
+<li>rootA&#x7684;&#x53F3;&#x5B50;&#x6811;&#x548C;rootB&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x8981;&#x5BF9;&#x79F0;</li>
 </ol>
-<p>定义一个函数：isMirror(self, lChild, rChild)，来判断两棵子树是否镜像对称。</p>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;isMirror(self, lChild, rChild)&#xFF0C;&#x6765;&#x5224;&#x65AD;&#x4E24;&#x68F5;&#x5B50;&#x6811;&#x662F;&#x5426;&#x955C;&#x50CF;&#x5BF9;&#x79F0;&#x3002;</p>
 <ol>
-<li>递归出口：当两个节点都为空时，返回True；当一个节点为空，另一个节点不为空时，返回False。</li>
-<li>递归过程：判断两个节点值是否相等；判断 rootA的左子树和rootB的右子树是否对称；rootA的右子树和rootB的左子树是否对称。<br>代码如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isSymmetric(self, root: TreeNode) -&gt; bool:</span><br><span class="line">        return self.isMirror(root, root)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def isMirror(self, lChild, rChild):</span><br><span class="line">        if lChild is None and rChild is None:</span><br><span class="line">            return True</span><br><span class="line">        if (lChild and rChild) is None:</span><br><span class="line">            return False</span><br><span class="line">        return (lChild.val == rChild.val) and self.isMirror(lChild.right, rChild.left) and self.isMirror(lChild.left, rChild.right)</span><br></pre></td></tr></table></figure></li>
+<li>&#x9012;&#x5F52;&#x51FA;&#x53E3;&#xFF1A;&#x5F53;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;True&#xFF1B;&#x5F53;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E3A;&#x7A7A;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x4E0D;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;False&#x3002;</li>
+<li>&#x9012;&#x5F52;&#x8FC7;&#x7A0B;&#xFF1A;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x8282;&#x70B9;&#x503C;&#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF1B;&#x5224;&#x65AD; rootA&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x548C;rootB&#x7684;&#x53F3;&#x5B50;&#x6811;&#x662F;&#x5426;&#x5BF9;&#x79F0;&#xFF1B;rootA&#x7684;&#x53F3;&#x5B50;&#x6811;&#x548C;rootB&#x7684;&#x5DE6;&#x5B50;&#x6811;&#x662F;&#x5426;&#x5BF9;&#x79F0;&#x3002;<br>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isSymmetric(self, root: TreeNode) -&gt; bool:</span><br><span class="line">        return self.isMirror(root, root)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def isMirror(self, lChild, rChild):</span><br><span class="line">        if lChild is None and rChild is None:</span><br><span class="line">            return True</span><br><span class="line">        if (lChild and rChild) is None:</span><br><span class="line">            return False</span><br><span class="line">        return (lChild.val == rChild.val) and self.isMirror(lChild.right, rChild.left) and self.isMirror(lChild.left, rChild.right)</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       

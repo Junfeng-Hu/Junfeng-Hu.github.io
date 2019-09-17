@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode-100-相同的树（python）解决树结构的题，理解和运用递归很重要。相同的树指的是：两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。  写递归出口：当p和q都是空时，两种情况。第一种是两棵树都为空树，p, q作为根节点都为空，直接返回True代表这两棵树相同。第二种是p, q不是根节点而是由之前树对应的节点结构和值都相等走到了这一步。 当p和q都不为空时继续对p和">
+  <meta name="description" content="LeetCode-100-&amp;#x76F8;&amp;#x540C;&amp;#x7684;&amp;#x6811;&amp;#xFF08;python&amp;#xFF09;&amp;#x89E3;&amp;#x51B3;&amp;#x6811;&amp;#x7ED3;&amp;#x6784;&amp;#x7684;&amp;#x9898;&amp;#xFF0C;&amp;#x7406;&amp;#x89E3;&amp;#x548C;&amp;#x8FD0;&amp;#x7528;&amp;#x9012;&amp;#x5F52;&amp;#x5F88;&amp;#x91">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2019/09/01/LeetCode-100-相同的树（python）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="LeetCode-100-相同的树（python）解决树结构的题，理解和运用递归很重要。相同的树指的是：两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。  写递归出口：当p和q都是空时，两种情况。第一种是两棵树都为空树，p, q作为根节点都为空，直接返回True代表这两棵树相同。第二种是p, q不是根节点而是由之前树对应的节点结构和值都相等走到了这一步。 当p和q都不为空时继续对p和">
+<meta property="og:description" content="LeetCode-100-&amp;#x76F8;&amp;#x540C;&amp;#x7684;&amp;#x6811;&amp;#xFF08;python&amp;#xFF09;&amp;#x89E3;&amp;#x51B3;&amp;#x6811;&amp;#x7ED3;&amp;#x6784;&amp;#x7684;&amp;#x9898;&amp;#xFF0C;&amp;#x7406;&amp;#x89E3;&amp;#x548C;&amp;#x8FD0;&amp;#x7528;&amp;#x9012;&amp;#x5F52;&amp;#x5F88;&amp;#x91">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1438289-be3e7d08f6a5e66b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2019-09-01T02:17:10.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="LeetCode-100-相同的树（python）解决树结构的题，理解和运用递归很重要。相同的树指的是：两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。  写递归出口：当p和q都是空时，两种情况。第一种是两棵树都为空树，p, q作为根节点都为空，直接返回True代表这两棵树相同。第二种是p, q不是根节点而是由之前树对应的节点结构和值都相等走到了这一步。 当p和q都不为空时继续对p和">
+<meta name="twitter:description" content="LeetCode-100-&amp;#x76F8;&amp;#x540C;&amp;#x7684;&amp;#x6811;&amp;#xFF08;python&amp;#xFF09;&amp;#x89E3;&amp;#x51B3;&amp;#x6811;&amp;#x7ED3;&amp;#x6784;&amp;#x7684;&amp;#x9898;&amp;#xFF0C;&amp;#x7406;&amp;#x89E3;&amp;#x548C;&amp;#x8FD0;&amp;#x7528;&amp;#x9012;&amp;#x5F52;&amp;#x5F88;&amp;#x91">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1438289-be3e7d08f6a5e66b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -147,16 +147,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="LeetCode-100-相同的树（python）"><a href="#LeetCode-100-相同的树（python）" class="headerlink" title="LeetCode-100-相同的树（python）"></a>LeetCode-100-相同的树（python）</h1><p>解决树结构的题，理解和运用递归很重要。相同的树指的是：两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。</p>
+        <h1 id="LeetCode-100-&#x76F8;&#x540C;&#x7684;&#x6811;&#xFF08;python&#xFF09;"><a href="#LeetCode-100-&#x76F8;&#x540C;&#x7684;&#x6811;&#xFF08;python&#xFF09;" class="headerlink" title="LeetCode-100-&#x76F8;&#x540C;&#x7684;&#x6811;&#xFF08;python&#xFF09;"></a>LeetCode-100-&#x76F8;&#x540C;&#x7684;&#x6811;&#xFF08;python&#xFF09;</h1><p>&#x89E3;&#x51B3;&#x6811;&#x7ED3;&#x6784;&#x7684;&#x9898;&#xFF0C;&#x7406;&#x89E3;&#x548C;&#x8FD0;&#x7528;&#x9012;&#x5F52;&#x5F88;&#x91CD;&#x8981;&#x3002;&#x76F8;&#x540C;&#x7684;&#x6811;&#x6307;&#x7684;&#x662F;&#xFF1A;&#x4E24;&#x4E2A;&#x6811;&#x5728;&#x7ED3;&#x6784;&#x4E0A;&#x76F8;&#x540C;&#xFF0C;&#x5E76;&#x4E14;&#x8282;&#x70B9;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x503C;&#xFF0C;&#x5219;&#x8BA4;&#x4E3A;&#x5B83;&#x4EEC;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</p>
 <ol>
-<li>写递归出口：当p和q都是空时，两种情况。第一种是两棵树都为空树，p, q作为根节点都为空，直接返回True代表这两棵树相同。第二种是p, q不是根节点而是由之前树对应的节点结构和值都相等走到了这一步。</li>
-<li>当p和q都不为空时继续对p和q的左右子树进行递归判断，左子树返回的结果保存在resLeft中， 右子树返回的结果保存在resRight中，返回的是resLeft和resRight的<strong>与</strong>值， 只有二者都为True时才返回True。</li>
-<li>其他情况比如p.val 和q.val不等以及p和q中只有一个为空时都返回False。</li>
+<li>&#x5199;&#x9012;&#x5F52;&#x51FA;&#x53E3;&#xFF1A;&#x5F53;p&#x548C;q&#x90FD;&#x662F;&#x7A7A;&#x65F6;&#xFF0C;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#x3002;&#x7B2C;&#x4E00;&#x79CD;&#x662F;&#x4E24;&#x68F5;&#x6811;&#x90FD;&#x4E3A;&#x7A7A;&#x6811;&#xFF0C;p, q&#x4F5C;&#x4E3A;&#x6839;&#x8282;&#x70B9;&#x90FD;&#x4E3A;&#x7A7A;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;True&#x4EE3;&#x8868;&#x8FD9;&#x4E24;&#x68F5;&#x6811;&#x76F8;&#x540C;&#x3002;&#x7B2C;&#x4E8C;&#x79CD;&#x662F;p, q&#x4E0D;&#x662F;&#x6839;&#x8282;&#x70B9;&#x800C;&#x662F;&#x7531;&#x4E4B;&#x524D;&#x6811;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#x7ED3;&#x6784;&#x548C;&#x503C;&#x90FD;&#x76F8;&#x7B49;&#x8D70;&#x5230;&#x4E86;&#x8FD9;&#x4E00;&#x6B65;&#x3002;</li>
+<li>&#x5F53;p&#x548C;q&#x90FD;&#x4E0D;&#x4E3A;&#x7A7A;&#x65F6;&#x7EE7;&#x7EED;&#x5BF9;p&#x548C;q&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x5224;&#x65AD;&#xFF0C;&#x5DE6;&#x5B50;&#x6811;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5728;resLeft&#x4E2D;&#xFF0C; &#x53F3;&#x5B50;&#x6811;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5728;resRight&#x4E2D;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x662F;resLeft&#x548C;resRight&#x7684;<strong>&#x4E0E;</strong>&#x503C;&#xFF0C; &#x53EA;&#x6709;&#x4E8C;&#x8005;&#x90FD;&#x4E3A;True&#x65F6;&#x624D;&#x8FD4;&#x56DE;True&#x3002;</li>
+<li>&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x6BD4;&#x5982;p.val &#x548C;q.val&#x4E0D;&#x7B49;&#x4EE5;&#x53CA;p&#x548C;q&#x4E2D;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x4E3A;&#x7A7A;&#x65F6;&#x90FD;&#x8FD4;&#x56DE;False&#x3002;</li>
 </ol>
-<p>总结：解决树相关的题目，递归出口，递归条件，以及对树结构的递归必须要很清楚。<br>代码如下：</p>
+<p>&#x603B;&#x7ED3;&#xFF1A;&#x89E3;&#x51B3;&#x6811;&#x76F8;&#x5173;&#x7684;&#x9898;&#x76EE;&#xFF0C;&#x9012;&#x5F52;&#x51FA;&#x53E3;&#xFF0C;&#x9012;&#x5F52;&#x6761;&#x4EF6;&#xFF0C;&#x4EE5;&#x53CA;&#x5BF9;&#x6811;&#x7ED3;&#x6784;&#x7684;&#x9012;&#x5F52;&#x5FC5;&#x987B;&#x8981;&#x5F88;&#x6E05;&#x695A;&#x3002;<br>&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isSameTree(self, p: TreeNode, q: TreeNode) -&gt; bool:</span><br><span class="line">        if p is None and q is None:</span><br><span class="line">            return True</span><br><span class="line">        if(p and q) and (p.val == q.val):</span><br><span class="line">            resLeft = self.isSameTree(p.left, q.left)</span><br><span class="line">            resRight = self.isSameTree(p.right, q.right)</span><br><span class="line">            return resLeft and resRight</span><br><span class="line">        else:</span><br><span class="line">            return False</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://upload-images.jianshu.io/upload_images/1438289-be3e7d08f6a5e66b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="相同的树"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1438289-be3e7d08f6a5e66b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x76F8;&#x540C;&#x7684;&#x6811;"></p>
 
       
 
