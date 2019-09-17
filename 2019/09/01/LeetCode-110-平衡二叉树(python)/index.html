@@ -15,12 +15,10 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="LeetCode-110-&amp;#x5E73;&amp;#x8861;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;(python)&amp;#x601D;&amp;#x8DEF;&amp;#x5F88;&amp;#x6E05;&amp;#x6670;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x83B7;&amp;#x5F97;&amp;#x6BCF;&amp;#x4E2A;&amp;#x8282;&amp;#x70B9;&amp;#x7684;&amp;#x5DE6;&amp;#x53F3;&amp;#x">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1438289-6030ea11ada7fecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-09-01T02:04:28.378Z">
+<meta property="og:updated_time" content="2019-09-17T08:20:24.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="LeetCode-110-&amp;#x5E73;&amp;#x8861;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;(python)&amp;#x601D;&amp;#x8DEF;&amp;#x5F88;&amp;#x6E05;&amp;#x6670;&amp;#xFF0C;&amp;#x5C31;&amp;#x662F;&amp;#x83B7;&amp;#x5F97;&amp;#x6BCF;&amp;#x4E2A;&amp;#x8282;&amp;#x70B9;&amp;#x7684;&amp;#x5DE6;&amp;#x53F3;&amp;#x">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1438289-6030ea11ada7fecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -147,7 +145,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="LeetCode-110-&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;-python"><a href="#LeetCode-110-&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;-python" class="headerlink" title="LeetCode-110-&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;(python)"></a>LeetCode-110-&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;(python)</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-6030ea11ada7fecd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;"><br>&#x601D;&#x8DEF;&#x5F88;&#x6E05;&#x6670;&#xFF0C;&#x5C31;&#x662F;&#x83B7;&#x5F97;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x9AD8;&#x5EA6;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE; abs(&#x5DE6;&#x5B50;&#x6811;&#x9AD8;&#x5EA6;-&#x53F3;&#x5B50;&#x6811;&#x9AD8;&#x5EA6;) &lt;= 1&#x7684;&#x503C;&#x3002;</p>
+        <h1 id="LeetCode-110-&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;-python"><a href="#LeetCode-110-&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;-python" class="headerlink" title="LeetCode-110-&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;(python)"></a>LeetCode-110-&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;(python)</h1><p>&#x601D;&#x8DEF;&#x5F88;&#x6E05;&#x6670;&#xFF0C;&#x5C31;&#x662F;&#x83B7;&#x5F97;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5DE6;&#x53F3;&#x5B50;&#x6811;&#x9AD8;&#x5EA6;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE; abs(&#x5DE6;&#x5B50;&#x6811;&#x9AD8;&#x5EA6;-&#x53F3;&#x5B50;&#x6811;&#x9AD8;&#x5EA6;) &lt;= 1&#x7684;&#x503C;&#x3002;</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">return self.eachNodeBalanced(root) and self.isBalanced(root.left) and self.isBalanced(root.right)</span><br></pre></td></tr></table></figure>
 
 <p>&#x8FD9;&#x53E5;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x662F;&#x5426;&#x6EE1;&#x8DB3;&#x5E73;&#x8861;&#x4E8C;&#x53C9;&#x6811;&#x8C03;&#x8282;&#x7684;&#x5E03;&#x5C14;&#x503C;&#x7684;<strong>&#x4E0E;</strong>&#x503C;&#xFF0C;&#x53EA;&#x8981;&#x6709;&#x4E00;&#x4E2A;&#x662F;False&#xFF0C;&#x90A3;&#x4E48;&#x6700;&#x7EC8;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x90FD;&#x662F;False&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x6240;&#x6709;&#x7684;&#x8282;&#x70B9;&#x90FD;&#x6EE1;&#x8DB3;&#x5E73;&#x8861;&#x6761;&#x4EF6;&#x65F6;&#xFF0C;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x624D;&#x662F;True&#x3002;</p>

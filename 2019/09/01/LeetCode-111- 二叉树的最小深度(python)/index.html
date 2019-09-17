@@ -15,12 +15,10 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="LeetCode-111- &amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#x7684;&amp;#x6700;&amp;#x5C0F;&amp;#x6DF1;&amp;#x5EA6;(python)&amp;#x9898;&amp;#x76EE;&amp;#xFF1A;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x4E2A;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#xFF0C;&amp;#x627E;&amp;#x51FA;&amp;#x5176;&amp;#">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1438289-d40e22a5449febf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-09-01T13:43:10.811Z">
+<meta property="og:updated_time" content="2019-09-17T08:20:00.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="LeetCode-111- &amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#x7684;&amp;#x6700;&amp;#x5C0F;&amp;#x6DF1;&amp;#x5EA6;(python)&amp;#x9898;&amp;#x76EE;&amp;#xFF1A;&amp;#x7ED9;&amp;#x5B9A;&amp;#x4E00;&amp;#x4E2A;&amp;#x4E8C;&amp;#x53C9;&amp;#x6811;&amp;#xFF0C;&amp;#x627E;&amp;#x51FA;&amp;#x5176;&amp;#">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1438289-d40e22a5449febf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -147,8 +145,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="LeetCode-111-&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;-python"><a href="#LeetCode-111-&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;-python" class="headerlink" title="LeetCode-111- &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;(python)"></a>LeetCode-111- &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;(python)</h1><p><img src="https://upload-images.jianshu.io/upload_images/1438289-d40e22a5449febf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;
-"><br>&#x9898;&#x76EE;&#xFF1A;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x627E;&#x51FA;&#x5176;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;&#x3002;<br>&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;&#x662F;&#x4ECE;&#x6839;&#x8282;&#x70B9;&#x5230;&#x6700;&#x8FD1;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x8282;&#x70B9;&#x6570;&#x91CF;&#x3002;<br>&#x8BF4;&#x660E;: &#x53F6;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x6307;&#x6CA1;&#x6709;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
+        <h1 id="LeetCode-111-&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;-python"><a href="#LeetCode-111-&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;-python" class="headerlink" title="LeetCode-111- &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;(python)"></a>LeetCode-111- &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;(python)</h1><p>&#x9898;&#x76EE;&#xFF1A;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x627E;&#x51FA;&#x5176;&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;&#x3002;<br>&#x6700;&#x5C0F;&#x6DF1;&#x5EA6;&#x662F;&#x4ECE;&#x6839;&#x8282;&#x70B9;&#x5230;&#x6700;&#x8FD1;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x4E0A;&#x7684;&#x8282;&#x70B9;&#x6570;&#x91CF;&#x3002;<br>&#x8BF4;&#x660E;: &#x53F6;&#x5B50;&#x8282;&#x70B9;&#x662F;&#x6307;&#x6CA1;&#x6709;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x3002;</p>
 <p>&#x601D;&#x8DEF;&#xFF1A;&#x4E0E;&#x6C42;&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x9AD8;&#x5EA6;&#x601D;&#x8DEF;&#x76F8;&#x4F3C;&#xFF0C;&#x4E0D;&#x8FC7;&#x8981;&#x6CE8;&#x610F;&#x9012;&#x5F52;&#x6761;&#x4EF6;&#x5982;&#x4E0B;&#x3002;</p>
 <ol>
 <li>&#x5F53;&#x8282;&#x70B9;&#x4E3A;&#x7A7A;&#xFF0C;return 0</li>
