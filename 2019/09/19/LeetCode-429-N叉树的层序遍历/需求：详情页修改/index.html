@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/9 | Hugh&#39;s Blog</title>
+  <title>Hugh&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="&amp;#x9700;&amp;#x6C42;&amp;#xFF1A;&amp;#x8BE6;&amp;#x60C5;&amp;#x9875;&amp;#x4FEE;&amp;#x6539;&amp;#x63CF;&amp;#x8FF0;&amp;#xFF1A; &amp;#x4ECE;&amp;#x5217;&amp;#x8868;&amp;#x9875;&amp;#x70B9;&amp;#x51FB;&amp;#x8FDB;&amp;#x5165;&amp;#x7684;&amp;#x8BE6;&amp;#x60C5;&amp;#x9875;&amp;#x5E94;&amp;#x8BE5">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hugh&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/page/3/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/09/19/LeetCode-429-N叉树的层序遍历/需求：详情页修改/index.html">
 <meta property="og:site_name" content="Hugh&#39;s Blog">
+<meta property="og:description" content="&amp;#x9700;&amp;#x6C42;&amp;#xFF1A;&amp;#x8BE6;&amp;#x60C5;&amp;#x9875;&amp;#x4FEE;&amp;#x6539;&amp;#x63CF;&amp;#x8FF0;&amp;#xFF1A; &amp;#x4ECE;&amp;#x5217;&amp;#x8868;&amp;#x9875;&amp;#x70B9;&amp;#x51FB;&amp;#x8FDB;&amp;#x5165;&amp;#x7684;&amp;#x8BE6;&amp;#x60C5;&amp;#x9875;&amp;#x5E94;&amp;#x8BE5">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-19T02:02:06.457Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hugh&#39;s Blog">
+<meta name="twitter:description" content="&amp;#x9700;&amp;#x6C42;&amp;#xFF1A;&amp;#x8BE6;&amp;#x60C5;&amp;#x9875;&amp;#x4FEE;&amp;#x6539;&amp;#x63CF;&amp;#x8FF0;&amp;#xFF1A; &amp;#x4ECE;&amp;#x5217;&amp;#x8868;&amp;#x9875;&amp;#x70B9;&amp;#x51FB;&amp;#x8FDB;&amp;#x5165;&amp;#x7684;&amp;#x8BE6;&amp;#x60C5;&amp;#x9875;&amp;#x5E94;&amp;#x8BE5">
   
     <link rel="alternative" href="/atom.xml" title="Hugh&#39;s Blog" type="application/atom+xml">
   
@@ -136,130 +140,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-LeetCode-429-N叉树的层序遍历/需求：详情页修改" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="&#x9700;&#x6C42;&#xFF1A;&#x8BE6;&#x60C5;&#x9875;&#x4FEE;&#x6539;"><a href="#&#x9700;&#x6C42;&#xFF1A;&#x8BE6;&#x60C5;&#x9875;&#x4FEE;&#x6539;" class="headerlink" title="&#x9700;&#x6C42;&#xFF1A;&#x8BE6;&#x60C5;&#x9875;&#x4FEE;&#x6539;"></a>&#x9700;&#x6C42;&#xFF1A;&#x8BE6;&#x60C5;&#x9875;&#x4FEE;&#x6539;</h1><h3 id="&#x63CF;&#x8FF0;&#xFF1A;-&#x4ECE;&#x5217;&#x8868;&#x9875;&#x70B9;&#x51FB;&#x8FDB;&#x5165;&#x7684;&#x8BE6;&#x60C5;&#x9875;&#x5E94;&#x8BE5;&#x662F;&#x53EF;&#x7F16;&#x8F91;&#x7684;&#x3002;"><a href="#&#x63CF;&#x8FF0;&#xFF1A;-&#x4ECE;&#x5217;&#x8868;&#x9875;&#x70B9;&#x51FB;&#x8FDB;&#x5165;&#x7684;&#x8BE6;&#x60C5;&#x9875;&#x5E94;&#x8BE5;&#x662F;&#x53EF;&#x7F16;&#x8F91;&#x7684;&#x3002;" class="headerlink" title="&#x63CF;&#x8FF0;&#xFF1A; &#x4ECE;&#x5217;&#x8868;&#x9875;&#x70B9;&#x51FB;&#x8FDB;&#x5165;&#x7684;&#x8BE6;&#x60C5;&#x9875;&#x5E94;&#x8BE5;&#x662F;&#x53EF;&#x7F16;&#x8F91;&#x7684;&#x3002;"></a>&#x63CF;&#x8FF0;&#xFF1A; &#x4ECE;&#x5217;&#x8868;&#x9875;&#x70B9;&#x51FB;&#x8FDB;&#x5165;&#x7684;&#x8BE6;&#x60C5;&#x9875;&#x5E94;&#x8BE5;&#x662F;&#x53EF;&#x7F16;&#x8F91;&#x7684;&#x3002;</h3><h3 id="&#x5B9E;&#x73B0;&#xFF1A;"><a href="#&#x5B9E;&#x73B0;&#xFF1A;" class="headerlink" title="&#x5B9E;&#x73B0;&#xFF1A;"></a>&#x5B9E;&#x73B0;&#xFF1A;</h3><ol>
+<li>&#x7528;&#x6765;&#x5C55;&#x793A;&#x7B14;&#x8BB0;&#x7684;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A; UITextView</li>
+<li>&#x70B9;&#x51FB;&#x8FDB;&#x53BB;&#x7684;UITextView&#x7684;&#x6587;&#x5B57;&#x662F;&#x4ECE;&#x5B58;&#x50A8;&#x4E2D;&#x8BFB;&#x53D6;&#x51FA;&#x6765;&#x7684;</li>
+<li>&#x8BE6;&#x60C5;&#x9875;&#x9762;&#x5E94;&#x8BE5;&#x4E5F;&#x6709;&#x5B58;&#x50A8;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4FDD;&#x8BC1;&#x4FEE;&#x6539;&#x7F16;&#x8F91;&#x6587;&#x5B57;&#x4E4B;&#x540E;&#x65E7;&#x7B14;&#x8BB0;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5B58;&#x50A8;&#x5DF2;&#x7ECF;&#x66F4;&#x65B0;&#x3002;</li>
+<li>&#x8BE6;&#x60C5;&#x9875;&#x9762;&#x5B58;&#x50A8;&#x540E;&#xFF0C;&#x5217;&#x8868;&#x9875;&#x4E5F;&#x5E94;&#x8BE5;&#x5185;&#x5BB9;&#x66F4;&#x65B0;&#x4E86;</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/LeetCode-107-二叉树的层次遍历 II（python）/" class="archive-article-date">
-  	<time datetime="2019-09-01T02:02:49.318Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/19/LeetCode-429-N叉树的层序遍历/需求：详情页修改/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/LeetCode-104- 二叉树的最大深度（迭代法）（python）/" class="archive-article-date">
-  	<time datetime="2019-09-01T02:01:58.420Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/LeetCode-104- 二叉树的最大深度（递归法）(python)/" class="archive-article-date">
-  	<time datetime="2019-09-01T02:01:18.467Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+    <a href="/2019/09/21/Objective-C相关知识点总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Objective-C相关知识点总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/01/LeetCode-429-N叉树的层序遍历/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode-429-N叉树的层序遍历</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/LeetCode-101-对称二叉树（迭代法）（python）/" class="archive-article-date">
-  	<time datetime="2019-09-01T02:00:34.689Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/LeetCode-101-对称二叉树（递归法）（python）/" class="archive-article-date">
-  	<time datetime="2019-09-01T01:59:38.957Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+        
+        
+    </div>
+</aside>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/09/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2019/09/">1</a><a class="page-number" href="/archives/2019/09/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2019/09/page/4/">4</a><a class="extend next" rel="next" href="/archives/2019/09/page/4/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
   
 
 
@@ -283,8 +321,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
