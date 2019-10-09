@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Hugh&#39;s Blog</title>
+  <title>删除main.storyboard需要注意的事项 | Hugh&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hugh&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/page/4/index.html">
+  <meta name="description" content="Could not find a storyboard named &amp;#x2018;Main&amp;#x2019; in bundle NSBundle&amp;#x5728;&amp;#x521B;&amp;#x5EFA;App&amp;#x4E0D;&amp;#x6253;&amp;#x7B97;&amp;#x7528;&amp;#x5DE5;&amp;#x7A0B;&amp;#x63D0;&amp;#x4F9B;&amp;#x7684;main.storyboard&amp;#xFF0C;&amp;#x52">
+<meta property="og:type" content="article">
+<meta property="og:title" content="删除main.storyboard需要注意的事项">
+<meta property="og:url" content="http://yoursite.com/2019/10/09/删除main-storyboard需要注意的事项/index.html">
 <meta property="og:site_name" content="Hugh&#39;s Blog">
+<meta property="og:description" content="Could not find a storyboard named &amp;#x2018;Main&amp;#x2019; in bundle NSBundle&amp;#x5728;&amp;#x521B;&amp;#x5EFA;App&amp;#x4E0D;&amp;#x6253;&amp;#x7B97;&amp;#x7528;&amp;#x5DE5;&amp;#x7A0B;&amp;#x63D0;&amp;#x4F9B;&amp;#x7684;main.storyboard&amp;#xFF0C;&amp;#x52">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://yoursite.com/2019/10/09/删除main-storyboard需要注意的事项/Users/grant/blog/source/_posts/%E5%88%A0%E9%99%A4main-storyboard%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E9%A1%B9/infoPlist.png">
+<meta property="og:updated_time" content="2019-10-09T08:55:18.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hugh&#39;s Blog">
+<meta name="twitter:title" content="删除main.storyboard需要注意的事项">
+<meta name="twitter:description" content="Could not find a storyboard named &amp;#x2018;Main&amp;#x2019; in bundle NSBundle&amp;#x5728;&amp;#x521B;&amp;#x5EFA;App&amp;#x4E0D;&amp;#x6253;&amp;#x7B97;&amp;#x7528;&amp;#x5DE5;&amp;#x7A0B;&amp;#x63D0;&amp;#x4F9B;&amp;#x7684;main.storyboard&amp;#xFF0C;&amp;#x52">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/09/删除main-storyboard需要注意的事项/Users/grant/blog/source/_posts/%E5%88%A0%E9%99%A4main-storyboard%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E9%A1%B9/infoPlist.png">
   
     <link rel="alternative" href="/atom.xml" title="Hugh&#39;s Blog" type="application/atom+xml">
   
@@ -136,67 +142,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-删除main-storyboard需要注意的事项" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      删除main.storyboard需要注意的事项
+    </h1>
+  
+
+        
+        <a href="/2019/10/09/删除main-storyboard需要注意的事项/" class="archive-article-date">
+  	<time datetime="2019-10-09T08:41:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Could-not-find-a-storyboard-named-&#x2018;Main&#x2019;-in-bundle-NSBundle"><a href="#Could-not-find-a-storyboard-named-&#x2018;Main&#x2019;-in-bundle-NSBundle" class="headerlink" title="Could not find a storyboard named &#x2018;Main&#x2019; in bundle NSBundle"></a><strong>Could not find a storyboard named &#x2018;Main&#x2019; in bundle NSBundle</strong></h1><p>&#x5728;&#x521B;&#x5EFA;App&#x4E0D;&#x6253;&#x7B97;&#x7528;&#x5DE5;&#x7A0B;&#x63D0;&#x4F9B;&#x7684;main.storyboard&#xFF0C;&#x5220;&#x9664;&#x4E86;&#x5DE5;&#x7A0B;&#x91CC;&#x7684;main.storyboard&#x6587;&#x4EF6;&#x4EE5;&#x53CA;Targets &#x2013;&gt; General&#x2013;&gt;Deployment Info&#x4E0B;&#x7684;Main Interface&#xFF0C;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x4E86;self.window&#x540E;&#xFF0C;&#x53D1;&#x73B0;&#x7A0B;&#x5E8F;&#x5D29;&#x6E83;&#x5E76;&#x62A5;&#x9519;&#x5982;&#x4E0B;&#xFF1A;<br>        <strong>Terminating app due to uncaught exception &#x2018;NSInvalidArgumentException&#x2019;, reason: &#x2018;Could not find a storyboard named &#x2018;Main&#x2019; in bundle NSBundle</strong>.</p>
+<p>&#x539F;&#x56E0;&#x662F;&#x8FD8;&#x8981;&#x5220;&#x9664;plist&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x76F8;&#x5E94;&#x7684;&#x952E;&#x503C;&#x5BF9;</p>
+<p><img src="/2019/10/09/&#x5220;&#x9664;main-storyboard&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x4E8B;&#x9879;/Users/grant/blog/source/_posts/%E5%88%A0%E9%99%A4main-storyboard%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E4%BA%8B%E9%A1%B9/infoPlist.png" alt></p>
+<p>&#x5220;&#x9664;&#x540E;&#xFF0C;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF01;</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/基础知识-层序遍历(python)/" class="archive-article-date">
-  	<time datetime="2019-09-01T01:56:49.457Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/09/删除main-storyboard需要注意的事项/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/01/基础知识-二叉树的构建（python）/" class="archive-article-date">
-  	<time datetime="2019-08-31T16:34:28.897Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/01/LeetCode-429-N叉树的层序遍历/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode-429-N叉树的层序遍历</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -220,8 +327,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

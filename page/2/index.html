@@ -138,6 +138,54 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LeetCode-104- 二叉树的最大深度（迭代法）（python）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="LeetCode-104-&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF08;&#x8FED;&#x4EE3;&#x6CD5;&#xFF09;&#xFF08;python&#xFF09;"><a href="#LeetCode-104-&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF08;&#x8FED;&#x4EE3;&#x6CD5;&#xFF09;&#xFF08;python&#xFF09;" class="headerlink" title="LeetCode-104- &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF08;&#x8FED;&#x4EE3;&#x6CD5;&#xFF09;&#xFF08;python&#xFF09;"></a>LeetCode-104- &#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF08;&#x8FED;&#x4EE3;&#x6CD5;&#xFF09;&#xFF08;python&#xFF09;</h1><p>&#x672C;&#x535A;&#x5BA2;&#x662F;&#x7528;&#x8FED;&#x4EE3;&#x6CD5;&#x6C42;&#x4E8C;&#x53C9;&#x6811;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#x3002;<br>&#x601D;&#x60F3;&#xFF1A;&#x91C7;&#x7528;&#x5C42;&#x5E8F;&#x904D;&#x5386;&#xFF0C;&#x7528;&#x4E00;&#x4E2A;&#x53D8;&#x91CF;&#x521D;&#x59CB;&#x503C;&#x4E3A;-1&#xFF08;&#x56E0;&#x4E3A;&#x5728;&#x6211;&#x5199;&#x7684;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x5728;&#x6700;&#x540E;&#x4E00;&#x5C42;&#x7684;&#x4E0B;&#x4E00;&#x5C42;&#x5373;&#x90FD;&#x662F;&#x7A7A;&#x8282;&#x70B9;&#x7684;&#x90A3;&#x4E00;&#x5C42;&#x4E5F;&#x6267;&#x884C;&#x4E86;&#x4E00;&#x6B21;&#xFF09;&#xFF0C;&#x6BCF;&#x904D;&#x5386;&#x4E00;&#x5C42;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x81EA;&#x589E;1&#x3002;<br>&#x5FC3;&#x5F97;&#xFF1A;&#x5176;&#x5B9E;&#x5199;&#x4EE3;&#x7801;&#x4E4B;&#x524D;&#x89C9;&#x5F97;&#x5F88;&#x56F0;&#x96BE;&#xFF0C;&#x56E0;&#x4E3A;&#x4E4B;&#x524D;&#x6709;&#x7A0D;&#x5FAE;&#x770B;&#x4E00;&#x4E0B;&#x522B;&#x4EBA;&#x7684;&#x89E3;&#x6790;&#xFF0C;&#x4EC0;&#x4E48;&#x7528;&#x4E24;&#x4E2A;&#x53D8;&#x91CF;&#x8BB0;&#x5F55;&#x5565;&#x5565;&#x5565;&#x7684;&#x3002;&#x4F46;&#x662F;&#x60F3;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5C42;&#x5E8F;&#x904D;&#x5386;&#x65F6;&#xFF0C;&#x6BCF;&#x904D;&#x5386;&#x4E00;&#x5C42;&#xFF0C;&#x9AD8;&#x5EA6;&#x52A0;&#x4E00;&#xFF0C;&#x60F3;&#x5230;&#x4E0A;&#x6B21;&#x5199;&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x79F0;&#x4E8C;&#x53C9;&#x6811;&#x8FED;&#x4EE3;&#x6CD5;&#x7684;&#x4EE3;&#x7801;&#x5176;&#x5B9E;&#x5F88;&#x597D;&#x7528;&#x3002;&#x7A81;&#x7136;&#x53D1;&#x73B0;&#xFF0C;&#x5176;&#x5B9E;&#x4F60;&#x638C;&#x63E1;&#x4E86;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x7528;&#x5230;&#x89E3;&#x51B3;&#x5F88;&#x591A;&#x9898;&#x76EE;&#x4E0A;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F60;&#x7684;&#x57FA;&#x672C;&#x529F;&#x5F88;&#x5DEE;&#xFF0C;&#x6CA1;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x89E3;&#x9898;&#x7684;&#x4EE3;&#x7801;&#x6846;&#x67B6;&#xFF0C;&#x90A3;&#x5C31;&#x4F1A;&#x5F88;&#x5403;&#x529B;&#x3002;<br>&#x9644;&#x4E0A;&#x4EE3;&#x7801;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxDepth2(self, root: TreeNode) -&gt; int:</span><br><span class="line">        if root is None:</span><br><span class="line">            return 0</span><br><span class="line">        queue = [root]</span><br><span class="line">        count = -1</span><br><span class="line">        while queue:</span><br><span class="line">            layer = list()</span><br><span class="line">            next_queue = list()</span><br><span class="line">            for node in queue:</span><br><span class="line">                if not node:</span><br><span class="line">                    layer.append(None)</span><br><span class="line">                    continue</span><br><span class="line"></span><br><span class="line">                next_queue.append(node.left)</span><br><span class="line">                next_queue.append(node.right)</span><br><span class="line">                layer.append(node.val)</span><br><span class="line"></span><br><span class="line">            queue = next_queue</span><br><span class="line">            count += 1</span><br><span class="line">        return count</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/01/LeetCode-104- 二叉树的最大深度（迭代法）（python）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-LeetCode-104- 二叉树的最大深度（递归法）(python)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
